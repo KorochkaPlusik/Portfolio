@@ -1,0 +1,22 @@
+.scroll-truck-container {
+  position: fixed;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.scroll-truck {
+  position: absolute;
+  width: 40px;
+  transition: top 0.2s ease, transform 0.4s ease;
+}
+
+.scroll-truck.reverse {
+  transform: scaleX(-1);
+}

@@ -1,0 +1,235 @@
+/* === Анимации =========================================================== */
+@keyframes gradientShift {               /* оставляем, если пригодится позже */
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {                      /* мягкое появление шапки */
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Основной контейнер Header ========================================= */
+.header {
+  position: static;          /* или fixed / sticky — под ваши задачи */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  background: #ffffff;       /* ← белый фон */
+  /* animation: gradientShift 10s ease infinite, */ /* градиент убрали */
+  animation: fadeIn 0.8s ease-out;
+
+  padding: 20px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
+
+/* === Навигационный список ============================================== */
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin-right: 30px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* === Ссылки и надписи: КРАСНЫЕ ========================================= */
+.nav-link,
+.dropdown span,
+.dropdown-menu li a {
+  color: #ff0000;            /* ярко-красный текст */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* При наведении оставляем красный, меняется только подчеркивание */
+.nav-link:hover,
+.dropdown span:hover {
+  color: #ff0000;
+}
+
+/* Подчеркивание (жёлтое, как было) */
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 3px;
+  background: #ffdc00;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:active {
+  transform: scale(0.95);
+}
+
+/* === Выпадающее меню ==================================================== */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: #ffffff;       /* белый фон меню */
+  padding: 10px 0;
+  list-style: none;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+  background: rgba(0, 0, 0, 0.05); /* лёгкий серый фон под курсором */
+}
+
+/* === Адаптивность ======================================================= */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+/* —————————————————————————————— */
+/* Лого и навигация рядом в одну строку */
+/* —————————————————————————————— */
+.header {
+  display: flex;                /* включаем flex-контейнер */
+  align-items: center;          /* выравниваем по вертикали */
+  justify-content: flex-start;  /* все по левому краю */
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Логотип */
+.logo-link {
+  display: block;
+  margin-right: 2rem;           /* отступ между лого и меню */
+}
+.logo {
+  height: 100px;
+  width: auto;
+}
+
+/* Сбросим лишние отступы у nav, чтобы он сел прямо в строку */
+.header nav {
+  margin: 0;
+  padding: 0;
+}
+
+/* Навигационный список */
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;                    /* убираем default-margin */
+  padding: 0;
+}
+.nav-list li {
+  margin: 0 1.5rem 0 0;         /* расстояние между пунктами */
+}
+
+/* Если нужно, подкорректируйте размер ссылок */
+.nav-link {
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+.header {
+  /* задаём контекст укладки и ставим поверх всего */
+  position: relative;  /* если шапка уже была фиксированной, замените на fixed */
+  z-index: 9999;       /* больше, чем у картинки */
+  background: #ffffff; /* непрозрачный белый фон обязательно */
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20 40px;
+  background-color: white;
+  height: 80px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.user-info-block {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info {
+  font-weight: bold;
+  color: #222;
+  font-size: 20px;
+}
+
+.logout {
+  cursor: pointer;
+  font-weight: bold;
+  color: red;
+  transition: opacity 0.2s;
+}
+
+.logout:hover {
+  opacity: 0.7;
+}

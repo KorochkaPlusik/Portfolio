@@ -1,0 +1,447 @@
+/* Общий контейнер */
+.dangerous-container {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* HEADER-секция */
+.dangerous-header {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/log/u1.png') no-repeat center center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: background 0.5s ease;
+}
+.header-overlay:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+.header-overlay h1 {
+  font-size: 3.2em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.header-overlay p {
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+/* BENEFITS секция */
+.dangerous-benefits {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.dangerous-benefits h2 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #222;
+}
+.benefit-grid {
+  display: grid;                                      /* раньше было flex */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;                                          /* и по‑горизонтали, и по‑вертикали */
+  justify-items: center;                              /* чтобы карточки были ровно посередине */
+}
+.benefit-item {
+  width: 100%;
+  max-width: 280px;                                   /* можно оставить ограничение, если нужно */
+  padding: 25px 20px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.benefit-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.benefit-item h3 {
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  color: #ff0000;
+  text-transform: uppercase;
+}
+.benefit-item p {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* GALERY секция */
+.work-gallery {
+  padding: 60px 20px;
+  background-color: #fdfdfd;
+  text-align: center;
+}
+.work-gallery h2 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.gallery-item {
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 10px;
+  z-index: 1;
+}
+.gallery-item p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+.galery-photo-1 {
+  background-image: url('./images/log/с1.png');
+}
+.galery-photo-2 {
+  background-image: url('./images/log/c4.png');
+}
+.galery-photo-3 {
+  background-image: url('./images/log/c5.png');
+}
+
+/* INFORMATION секция */
+.dangerous-info {
+  padding: 60px 20px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.dangerous-info .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.dangerous-info h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #222;
+}
+.dangerous-info p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+}
+.dangerous-info h3 {
+  font-size: 1.5em;
+  margin: 30px 0 10px;
+  color: #ff0000;
+}
+.dangerous-info ul {
+  list-style: disc;
+  margin-left: 40px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* DETAILS секция */
+.dangerous-details {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+.dangerous-details .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.dangerous-details h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #222;
+}
+.details-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.detail-item {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.detail-item:hover {
+  transform: translateY(-8px);
+}
+.detail-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #ff0000;
+}
+.detail-item p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* REQUEST секция */
+.dangerous-request {
+  position: relative;
+  padding: 60px 20px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./images/background/5402f580b013a907ab568f416ecf9aedaeff9e5e.jpg') no-repeat center center/cover;
+  text-align: center;
+  color: #fff;
+}
+.dangerous-request::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+.dangerous-request .container {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.dangerous-request h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.dangerous-request p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+.dangerous-request .request-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.dangerous-request input {
+  flex: 1 1 250px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  color: #000;
+  background-color: #fff;
+}
+.dangerous-request button {
+  padding: 10px 25px;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dangerous-request button:hover {
+  background-color: #ff0000;
+}
+.dangerous-request .response-message {
+  color: #0f0;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.dangerous-request .disclaimer {
+  font-size: 0.85em;
+  margin-top: 20px;
+  color: #ddd;
+}
+
+/* —————————————————————————————— */
+/* Улучшенный блок «Тип кузова»     */
+/* —————————————————————————————— */
+.dangerous-info .type-body {
+  max-width: 600px;
+  margin: 2.5rem auto;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  border-left: 4px solid #ff0000;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.dangerous-info .type-body h3 {
+  font-size: 1.8rem;
+  color: #ff0000;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.dangerous-info .type-body h3::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background: #ff0000;
+  border-radius: 2px;
+}
+
+.dangerous-info .type-body ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.dangerous-info .type-body ul li {
+  background: #ff0000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease;
+}
+
+.dangerous-info .type-body ul li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.dangerous-request {
+  position: relative;
+  padding: 80px 20px;
+  margin-top: 40px; /* <-- Добавлен отступ сверху */
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('./images/background/5402f580b013a907ab568f416ecf9aedaeff9e5e.jpg') 
+              no-repeat center center/cover;
+  text-align: center;
+  color: #fff;
+  border-radius: 8px; /* опционально — скругление блока */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3); /* для глубины */
+}
+.dangerous-request {
+  position: relative;
+  padding: 80px 20px;
+  margin-top: 40px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('./images/log/i1.png') 
+              no-repeat center center/cover;
+  text-align: center;
+  color: #fff;
+  border-radius: 12px; /* ✅ пункт 2: скругление */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* ✅ пункт 2: тень */
+}
+
+.dangerous-request .container {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.35); /* ✅ пункт 3: тёмный фон */
+  padding: 40px 30px;              /* ✅ пункт 3: внутренние отступы */
+  border-radius: 10px;             /* ✅ пункт 3: скругление */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5); /* ✅ пункт 3: внутренняя тень */
+}
+.body-photo {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Картинки, задаваемые через CSS */
+.body-photo-furgon {
+  background-image: url('./images/log/v1.png');
+}
+.body-photo-tent {
+  background-image: url('./images/log/v2.png');
+}
+.body-photo-refrigerator {
+  background-image: url('./images/log/v3.png');
+}
+.body-photo-container {
+  background-image: url('./images/log/v4.png');
+}
+.body-photo-shalanda {
+  background-image: url('./images/log/v5.png');
+}
+
+/* Анимация */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Активный элемент */
+.type-body ul li.active {
+  outline: 2px solid #ff0000;
+  outline-offset: 2px;
+}
+.benefit-grid {
+  display: flex;               /* ← заменим grid на flex */
+  flex-wrap: wrap;
+  justify-content: center;     /* ← чтобы все элементы были по центру */
+  gap: 30px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #ffffff; /* ← белый фон */
+}
+.dangerous-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #ffffff; /* ← сплошной белый */
+}

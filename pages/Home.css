@@ -1,0 +1,1155 @@
+/* src/pages/Home.css */
+
+/* -- Общий контейнер страницы -- */
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* -- Hero-секция -- */
+.hero {
+  position: relative;
+  background-image: url('./images/log/b1.png'); /* Замените путь при необходимости */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  padding: 10px 25px;
+  background-color: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #b30000;
+}
+
+/* -- Секция преимуществ (услуг) -- */
+.services {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Карточки с фоновыми изображениями, анимация при hover */
+.service-item {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.service-item:hover::before {
+  background: rgba(0,0,0,0.5);
+}
+
+.service-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.service-content h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.service-content p {
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+/* Задаём фоновое изображение для каждой карточки */
+.service-1 {
+  background-image: url('./images/home/photo_2025-04-21_22-06-02.jpg');
+}
+.service-2 {
+  background-image: url('./images/home/photo_2025-04-21_21-59-32.jpg');
+}
+.service-3 {
+  background-image: url('./images/log/b2.png');
+}
+
+/* -- Секция "О компании" -- */
+.about {
+  position: relative;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #fafafa 0%, #f1f1f1 100%);
+  overflow: hidden;
+}
+
+.about-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.about .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.about-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.highlight {
+  flex: 1 1 200px;
+  max-width: 250px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.highlight i {
+  font-size: 2em;
+  color: #ff0000;
+  margin-bottom: 15px;
+}
+
+.highlight h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.highlight p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #666;
+}
+.request-section {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+
+  /* Фоновое изображение: замена background-color на background с cover */
+  background: url('./images/background/images.jpg') no-repeat center center / cover;
+  color: #fff; /* Текст белым, чтобы быть читабельным на фоне */
+}
+
+/* Полупрозрачный оверлей поверх фонового изображения */
+.request-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  background: rgba(0,0,0,0.4); /* затемнение фона */
+  z-index: 0;
+}
+
+.request-section .container {
+  position: relative;
+  z-index: 1; /* контент поверх оверлея */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Заголовок и описание */
+.request-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.request-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+/* Форма */
+.request-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.request-form input {
+  flex: 1 1 200px;
+  min-width: 200px;
+  padding: 10px;
+  font-size: 1em;
+
+  /* Белый фон, чтобы текст и поля были видны на тёмном фоне */
+  background-color: #fff;
+  color: #000;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.request-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.request-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Сообщение об успехе */
+.response-message {
+  color: #0f0;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Дисклеймер */
+.disclaimer {
+  font-size: 0.85em;
+  color: #f0f0f0;
+  margin-top: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+/* ———————————————— */
+/* Фрагмент: «info-section», «about» и «request-section» */
+/* ———————————————— */
+
+/* 1. INFO SECTION */
+.info-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+.info-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.info-section h2 {
+  font-size: 2.4rem;
+  color: #e30613;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.info-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #e30613;
+  border-radius: 2px;
+}
+.info-section p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.info-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 2rem 0 0;
+  list-style: none;
+}
+.info-section ul li {
+  background: #e30613;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.info-section ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* 2. ABOUT SECTION */
+.about {
+  padding: 4rem 1rem;
+  background: #f9f9f9;
+}
+.about .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about h2 {
+  font-size: 2.4rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.about-text {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 2rem;
+}
+.highlight {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.highlight:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+.highlight i {
+  font-size: 2.5rem;
+  color: #e30613;
+  margin-bottom: 1rem;
+}
+.highlight h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+.highlight p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 3. REQUEST SECTION */
+.request-section {
+  position: relative;
+  padding: 4rem 1rem;
+  background: url('./images/log/b1.png') no-repeat center/cover;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+.request-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.request-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.request-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+.request-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #e30613;
+  border-radius: 2px;
+}
+.request-section p {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.request-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.request-form input {
+  flex: 1 1 200px;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+.request-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: #e30613;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.request-form button:hover {
+  background: #c40010;
+  transform: translateY(-2px);
+}
+.response-message {
+  font-weight: bold;
+  color: #0f0;
+  margin-bottom: 1rem;
+}
+.disclaimer {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+}
+.hero {
+  margin-bottom: 4rem; /* отступ под героем */
+}
+
+.request-section {
+  margin-top: 4rem;   /* отступ над секцией заявки */
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes heroZoom {
+  from {
+    transform: scale(1.02);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero-overlay {
+  animation: heroZoom 1.5s ease-out;
+}
+.container:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+}
+body {
+  background-image: 
+    linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
+    url('./images/log/b3.png');
+  background-repeat: repeat;
+  background-size: 300px auto;
+  background-attachment: fixed;
+}
+
+/* Home.css */
+.globe-section {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+}
+.globe-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* такой же как у .info-section и .about */
+}
+.map-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.map-image {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.terminal-section {
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  border: 1px solid #e0e0e0;
+}
+
+.terminal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-text {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.terminal-text h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #003366;
+  font-weight: bold;
+}
+
+.terminal-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.terminal-text li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 20px;
+  font-size: 1em;
+  color: #000000;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.terminal-text li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+}
+
+.terminal-image {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.terminal-image img {
+  max-width: 100%;
+  height: auto;
+}
+.terminal-section {
+  padding: 60px 20px;
+  background: #f5f7fa;
+  border: 2px solid #0066cc;
+  border-radius: 0;
+  position: relative;
+  clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 0 100%);
+  margin: 40px auto;
+}
+
+.terminal-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-text {
+  flex: 1 1 55%;
+  padding: 20px;
+}
+
+.terminal-text h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #1b1b1b;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.terminal-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terminal-text li {
+  font-size: 1em;
+  color: #1b1b1b;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  position: relative;
+  border-bottom: 1px solid #cc0000;
+  padding-left: 0;
+  max-width: 480px;
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+
+.terminal-text li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 1px;
+  background-color: #cc0000;
+  transform: rotate(45deg);
+}
+
+.terminal-image {
+  flex: 1 1 40%;
+  text-align: center;
+  padding: 20px;
+}
+
+.terminal-image img {
+  max-width: 100%;
+  height: auto;
+}
+.terminal-image {
+  flex: 1 1 80%;
+  text-align: center;
+  padding: 100px;
+  background: url('./images/log/b8.png') no-repeat center;
+  background-size: contain;
+  min-height: 260px;
+}
+.terminal-section {
+  background: #f4f6f9;
+  padding: 60px 20px;
+  border: 1px solid #ff0000;
+  position: relative;
+  clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 0 100%);
+}
+
+.terminal-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.terminal-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.terminal-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+.terminal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terminal-list li {
+  position: relative;
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #d9e3f0;
+  font-size: 1rem;
+  color: #0e2a47;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.terminal-list li::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 2px solid #ce0000;
+  border-bottom: 2px solid #ce0000;
+}
+
+.terminal-list li:hover {
+  color: #ce0000;
+}
+
+.terminal-image img {
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.amlogistic-location {
+  background: #fff;
+  padding: 60px 20px;
+}
+
+.amlogistic-flex {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.amlogistic-left {
+  flex: 1;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 30px 20px;
+  position: relative;
+  border: 2px solid #ff0000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.amlogistic-logo-bg {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  opacity: 0.1;
+  height: 100%;
+}
+
+.amlogistic-logo-bg img {
+  height: 160px;
+  object-fit: contain;
+}
+
+.amlogistic-list {
+  margin-left: 80px;
+}
+
+.amlogistic-list h3 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.amlogistic-list ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.amlogistic-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.amlogistic-right {
+  flex: 2;
+  padding: 10px;
+}
+
+.amlogistic-right h3 {
+  color: #8f0000;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.amlogistic-right .highlight {
+  color: #8f0000;
+}
+
+.amlogistic-bullets {
+  list-style: none;
+  padding-left: 0;
+}
+
+.amlogistic-bullets li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.amlogistic-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 2px;
+  background-color: #ff0000;
+}
+.amlogistic-left {
+  flex: 1;
+  background-image: url('./images/log/l1.png'); /* Путь к логотипу */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* заменили contain на cover — изображение растянется */
+
+  background-color: transparent;
+  border: 1px solid #ff0000;
+  border-radius: 20px;
+
+  min-height: 270px;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* src/pages/Home.css */
+
+/* -- Общий контейнер страницы -- */
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Новый стиль для terminal-section, чтобы контейнер был справа от текста */
+.terminal-section {
+  padding: 60px 20px;
+  background-color: #f7f9fc;
+  border: 1px solid #ff0000;
+}
+
+.terminal-wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.terminal-content {
+  flex: 1 1 55%;
+  padding: 20px;
+}
+
+.terminal-content h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1b1b1b;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.terminal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terminal-list li {
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid #d9e3f0;
+  font-size: 1rem;
+  color: #0e2a47;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.terminal-list li::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 2px solid #ce0000;
+  border-bottom: 2px solid #ce0000;
+}
+
+.terminal-list li:hover {
+  color: #ce0000;
+}
+
+.terminal-image {
+  flex: 1 1 40%;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Удаляем лишние дублирующие и конфликтующие стили */
+
+.request-section {
+  position: relative;
+  padding: 4rem 1rem;
+  margin: 0; /* Удаляем внешние отступы */
+  width: 100vw; /* Ширина во весь экран */
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%); /* Центрируем */
+  background: url('./images/log/b1.png') no-repeat center/cover;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+.terminal-section {
+  margin: 0;
+  padding: 0; /* или оставь, если нужен внутренний отступ */
+  border-radius: 0;
+}
+.contacts-section {
+  background-color: #c00000;
+  color: white;
+  padding: 40px 20px;
+}
+
+.contacts-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.contact-item.address::before {
+  content: "";
+  background-image: url('./images/ico/ico2.png'); /* путь от public/ */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  filter: brightness(0) invert(1);
+}
+
+.contact-item.email::before {
+  content: "";
+  background-image: url('./images/ico/ico1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  filter: brightness(0) invert(1);
+}
+.contacts-section {
+  position: relative;
+  color: white;
+  padding: 40px 20px;
+  background: #c00000;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contacts-section::before {
+  /* Фото через url, занимает ~40% ширины, только слева */
+  content: "";
+  display: block;
+  position: absolute;
+  left: 15%;
+  top: 0;
+  width: 28%;               /* ширина фото-секции */
+  height: 100%;
+  background: url('./images/log/MK1.png') left center/cover no-repeat;
+  /* Меняй url на свою фотку! */
+  z-index: 1;
+}
+
+.contacts-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.contacts-info {
+  background: rgba(44,44,54,0.78);
+  border-radius: 18px;
+  padding: 34px 46px;
+  min-width: 300px;
+  box-shadow: 0 6px 32px rgba(34,34,56,0.11);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-left: 42px; /* чтобы не прилипало к фото */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+  font-weight: 500;
+  position: relative;
+  padding-left: 36px;  /* Чуть больше, чем было */
+  letter-spacing: 0.01em;
+}
+
+.contact-item.address::before {
+  content: "";
+  background-image: url('./images/ico/ico2.png');
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  filter: brightness(0) invert(1);
+}
+
+.contact-item.email::before {
+  content: "";
+  background-image: url('./images/ico/ico1.png');
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 800px) {
+  .contacts-section::before {
+    width: 0; /* Убираем фото слева на мобилках */
+    background: none;
+  }
+  .contacts-info {
+    margin-left: 0;
+    padding: 18px 10px;
+    min-width: unset;
+  }
+  .contact-item {
+    padding-left: 28px;
+    font-size: 15px;
+  }
+}

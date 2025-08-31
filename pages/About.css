@@ -1,0 +1,435 @@
+/* Общий стиль страницы */
+.about-page {
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Герой */
+.about-hero {
+  position: relative;
+  background: url('./images/log/i2.png') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.hero-overlay h1 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+.hero-overlay p {
+  font-size: 1.5em;
+  animation: fadeInUp 1s ease;
+}
+
+/* Анимации появления */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Универсальный контейнер */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Секция "О компании" */
+.about-company h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ff0000;
+}
+.about-company p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: center;
+  color: #555;
+}
+
+/* Плашки-преимущества, расположенные в один ряд */
+.benefits-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.benefit-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+.benefit-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #ff0000;
+}
+.benefit-item p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Секция "Миссия и ценности" */
+.about-mission {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+.about-mission h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #ff0000;
+}
+.mission-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.value-item {
+  flex: 1 1 300px;
+  text-align: center;
+}
+.value-item h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #ff0000;
+}
+.value-item p,
+.value-item ul {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+.value-item ul {
+  list-style-type: disc;
+  margin: 0 auto;
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* Секция "Наша история" */
+.about-history {
+  padding: 60px 20px;
+}
+.about-history h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ff0000;
+}
+.about-history p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+
+/* Секция "Наша команда" */
+.about-team {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+.about-team h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #ff0000;
+}
+.about-team p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Responsive стили */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2.5em;
+  }
+  .hero-overlay p {
+    font-size: 1.2em;
+  }
+  .mission-values {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .benefits-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ==============================================
+   Переменные
+   ============================================== */
+:root {
+  --color-primary: #e60000;
+
+  --color-bg: #ffffff;
+  --color-surface: rgba(230, 0, 0, 0.05);
+  --gradient-border: linear-gradient(135deg, #e60000 0%, #ff8080 100%);
+  --border-radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* ==============================================
+   Общий стиль страницы
+   ============================================== */
+.about-page {
+  font-family: 'Arial', sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow-x: hidden;
+}
+
+/* ==============================================
+   Универсальная рамка для секций
+   ============================================== */
+.about-company,
+.about-mission,
+.about-history,
+.about-team {
+  position: relative;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: var(--color-bg);
+  border: 3px solid transparent;
+  border-image: var(--gradient-border) 1;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.about-company:hover,
+.about-mission:hover,
+.about-history:hover,
+.about-team:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Dekorativnye kruzhki-v-ugolakh */
+.about-company::before,
+.about-mission::before,
+.about-history::before,
+.about-team::before,
+.about-company::after,
+.about-mission::after,
+.about-history::after,
+.about-team::after {
+  content: '';
+  position: absolute;
+  width: 60px; height: 60px;
+  background: var(--gradient-border);
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+.about-company::before { top: -30px; left: -30px; }
+.about-company::after  { bottom: -30px; right: -30px; }
+.about-mission::before { top: -30px; right: -30px; }
+.about-mission::after  { bottom: -30px; left: -30px; }
+.about-history::before { top: -30px; left: -30px; }
+.about-history::after  { bottom: -30px; right: -30px; }
+.about-team::before    { top: -30px; right: -30px; }
+.about-team::after     { bottom: -30px; left: -30px; }
+
+/* ==============================================
+   Секции заголовков
+   ============================================== */
+.about-company h2,
+.about-mission h2,
+.about-history h2,
+.about-team h2 {
+  font-size: 2.4em;
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.about-company h2::after,
+.about-mission h2::after,
+.about-history h2::after,
+.about-team h2::after {
+  content: '';
+  display: block;
+  width: 80px; height: 4px;
+  background: var(--color-primary);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* ==============================================
+   Секция "О компании" (карточки преимуществ)
+   ============================================== */
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.benefit-item {
+  background: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(255, 0, 0, 0.08);
+}
+
+.benefit-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+.benefit-item p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+/* ==============================================
+   Секция "Миссия и ценности" (рамка и разделитель)
+   ============================================== */
+.about-mission {
+  padding-top: 20px;  /* подтянем чуть заголовок к рамке */
+}
+
+.mission-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  background: transparent;
+  align-items: flex-start;
+}
+
+.mission-values .value-item {
+  flex: 1 1 300px;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.mission-values .value-item + .value-item {
+  border-left: 1px dashed var(--color-primary);
+  padding-left: 20px;
+}
+
+.value-item h3 {
+  font-size: 1.6em;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+}
+.value-item p,
+.value-item ul {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+.value-item ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* ==============================================
+   Секция "Наша история" и "Наша команда"
+   ============================================== */
+.about-history p,
+.about-team p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-surface);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* ==============================================
+   Responsive
+   ============================================== */
+@media (max-width: 768px) {
+  .mission-values {
+    flex-direction: column;
+  }
+  .mission-values .value-item + .value-item {
+    border-left: none;
+    border-top: 1px dashed var(--color-primary);
+    padding: 20px 0 0;
+  }
+  .benefits-list {
+    grid-template-columns: 1fr;
+  }
+}
+/* Белый текст и тень на герое */
+.about-hero .hero-overlay,
+.about-hero .hero-overlay h1,
+.about-hero .hero-overlay p {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Если нужно отдельно для заголовка и параграфа */
+.hero-overlay h1 {
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero-overlay p {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
